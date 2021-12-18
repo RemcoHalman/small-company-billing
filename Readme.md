@@ -32,7 +32,7 @@ Install the project with docker (in development)
 Clone the project
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/RemcoHalman/small-company-billing.git
 ```
 
 Go to the project directory
