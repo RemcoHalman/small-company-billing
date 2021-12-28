@@ -1,19 +1,18 @@
 from django.contrib import admin
-from .models import Company, CompanyDetails, Address
+from .models import Customer, CustomerDetails, Address
 
 
-class CompanyDetailsAdmin(admin.StackedInline):
-    model = CompanyDetails
+class CustomerDetailsAdmin(admin.StackedInline):
+    model = CustomerDetails
 
 
 class AddressAdmin(admin.StackedInline):
     model = Address
 
 
-
-@admin.register(Company)
-class CompanyAdmin(admin.ModelAdmin):
+@admin.register(Customer)
+class CustomerAdmin(admin.ModelAdmin):
     inlines = [
         AddressAdmin,
-        CompanyDetailsAdmin, 
+        CustomerDetailsAdmin, 
     ]

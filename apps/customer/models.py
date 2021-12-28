@@ -1,14 +1,21 @@
 from django.db import models
 
-class Company(models.Model):
+customerChoice = (
+    ( 'Individual', 'Individual'),
+    ( 'Business', 'Business'),
+)
+
+## Customer and coresponding models
+class Customer(models.Model):
     name = models.CharField(max_length=100)
+    customer_type = models.CharField(max_length=100, choices=customerChoice)
 
     def __str__(self):
         return self.name
 
-class CompanyDetails(models.Model):
-    company = models.OneToOneField(
-        Company,
+class CustomerDetails(models.Model):
+    customer = models.OneToOneField(
+        Customer,
         on_delete=models.PROTECT
     )
     IBAN_number = models.CharField(
@@ -30,14 +37,13 @@ class CompanyDetails(models.Model):
         help_text="Chamber of Commerce / KVK nummer",
     )
     
-
     def __str__(self):
-        return f"{self.company}"
+        return f"{self.customer}"
 
 
 class Address(models.Model):
-    company = models.OneToOneField(
-        Company,
+    customer = models.OneToOneField(
+        Customer,
         on_delete=models.PROTECT
     )
     country = models.OneToOneField("billing.Country", on_delete=models.CASCADE)
@@ -56,4 +62,4 @@ class Address(models.Model):
     zip_code = models.CharField(max_length=6)
 
     def __str__(self):
-        return f"{self.company}"
+        return f"{self.customer}"

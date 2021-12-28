@@ -1,23 +1,5 @@
 from django.db import models
 
-class Tax(models.Model):
-    tax_option = models.PositiveIntegerField(
-        unique=False,
-        blank=False,
-    )
-
-    def __str__(self):
-        return str(self.tax_option)
-
-class DueDate(models.Model):
-    time_due_date = models.PositiveIntegerField(
-        unique=False,
-        blank=False,
-    )
-
-    def __str__(self):
-        return str(self.time_due_date)
-
 
 class Country(models.Model):
     name = models.CharField(max_length=40, unique=True, blank=True)
