@@ -25,7 +25,14 @@ INSTALLED_APPS = [
     'apps.account',
     'apps.billing',
     'apps.customer',
+    'apps.invoice',
 ]
+
+
+ADMIN_SITE_HEADER = "Billing Administration" # default: "Django Administration"
+ADMIN_SITE_TITLE = "Billing Administration" # default: "Django site admin"
+ADMIN_INDEX_TITLE = "Features area" # default: "Site administration"
+ADMIN_SITE_URL = "/" # default: "/"
 
 if DEBUG:
     INSTALLED_APPS += [
