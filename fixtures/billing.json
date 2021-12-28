@@ -1,0 +1,7 @@
+[
+  {
+    "model": "billing.country",
+    "pk": 1,
+    "fields": { "name": "The Netherlands", "code": "31" }
+  }
+]

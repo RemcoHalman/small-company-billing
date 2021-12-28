@@ -1,0 +1,30 @@
+[
+  {
+    "model": "customer.customer",
+    "pk": 1,
+    "fields": { "name": "Test User", "customer_type": "Individual" }
+  },
+  {
+    "model": "customer.customerdetails",
+    "pk": 1,
+    "fields": {
+      "customer": 1,
+      "IBAN_number": "NL00INGB0123456789",
+      "vat_number": "NL000000000B00",
+      "register_number": "012345678"
+    }
+  },
+  {
+    "model": "customer.address",
+    "pk": 1,
+    "fields": {
+      "customer": 1,
+      "country": 1,
+      "address_line_1": "Dummy Street",
+      "address_line_2": null,
+      "house_number": 10,
+      "appartment_addition": null,
+      "zip_code": "0000XY"
+    }
+  }
+]

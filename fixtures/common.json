@@ -1,0 +1,30 @@
+[
+  { "model": "common.invoicestate", "pk": 1, "fields": { "name": "Draft" } },
+  { "model": "common.invoicestate", "pk": 2, "fields": { "name": "Sent" } },
+  { "model": "common.invoicestate", "pk": 3, "fields": { "name": "Pending" } },
+  { "model": "common.invoicestate", "pk": 4, "fields": { "name": "Paid" } },
+  {
+    "model": "common.invoicestate",
+    "pk": 5,
+    "fields": { "name": "Cancelled" }
+  },
+  {
+    "model": "common.tax",
+    "pk": 1,
+    "fields": { "value": 0, "tax_value": "0.00" }
+  },
+  {
+    "model": "common.tax",
+    "pk": 2,
+    "fields": { "value": 9, "tax_value": "0.09" }
+  },
+  {
+    "model": "common.tax",
+    "pk": 3,
+    "fields": { "value": 21, "tax_value": "0.21" }
+  },
+  { "model": "common.duedate", "pk": 1, "fields": { "time_due_date": 5 } },
+  { "model": "common.duedate", "pk": 2, "fields": { "time_due_date": 7 } },
+  { "model": "common.duedate", "pk": 3, "fields": { "time_due_date": 14 } },
+  { "model": "common.duedate", "pk": 4, "fields": { "time_due_date": 30 } }
+]
