@@ -4,6 +4,9 @@ from .models import Invoice
 
 @admin.register(Invoice)
 class InvoiceAdmin(admin.ModelAdmin):
-    pass
-    # list_display = ('',)
+    list_display = (
+    'invoice_title',
+    'invoice_state',
+    'invoice_number',
+    )
     
