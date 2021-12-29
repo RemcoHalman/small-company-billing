@@ -63,6 +63,9 @@ dummy_db:
 
 rebuild: clean_up dummy_db
 
+linter:
+	flake8 project; flake8 apps/* > linter-todo.md
+
 # ============================================ *
 # 						Docker specific tasks						 *
 # ============================================ *
