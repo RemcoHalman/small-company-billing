@@ -1,36 +1,24 @@
-# ================================================================== *
+# ========================================== *
 # 							  Makefile help							 *
-# ================================================================== *
+# ========================================== *
 
 define USAGE
 
 Small Billing/invoicing app
-_____________________________________________________
+______________________________________________________
 
 Commands:
 
 	Base:
-	_____________________________________________
+	______________________________________________
 	Docker:
 	build           : Build Docker image
 	run             : Run Docker image
 	destroy_empty   : Destroy empty docker images
-	_____________________________________________
+	______________________________________________
 endef
 
 export USAGE
-
-# ========================================== *
-# 							Docker Variables						 *
-# ========================================== *
-
-PREFIX=remcoha
-APP_NAME=billingsystem
-IMG_REGISTRY=docker.io/$(PREFIX)
-VERSION=0.0.1
-LOCAL_PORT=8000
-EXPOSE_PORT=3250
-IMG_NAME=$(IMG_REGISTRY)/$(APP_NAME):$(VERSION)
 
 # ============================= *
 # 						Utils 						*
@@ -64,25 +52,11 @@ dummy_db:
 rebuild: clean_up dummy_db
 
 linter:
-	flake8 project; flake8 apps/* > linter-todo.md
+	@flake8 . --exit-zero --exclude .git,venv > linter-todo.md
 
 # ============================================ *
 # 						Docker specific tasks						 *
 # ============================================ *
-
-build:
-	docker build -t $(IMG_NAME) .
-
-run:
-	docker run -d -p $(EXPOSE_PORT):$(LOCAL_PORT) $(IMG_NAME)
-
-buildrun: build run
-
-stats:
-	@docker ps --format 'CONTAINER ID : {{.ID}} | Name: {{.Names}} | Image:  {{.Image}} |  Ports: {{.Ports}}'
-
-stop: ## Stop and remove a running container
-	docker stop $$(docker ps -q --filter ancestor=$(PREFIX)/$(APP_NAME):$(VERSION) --format="{{.ID}}" )
 
 destroy_empty:
 	docker rmi $$(docker images --filter "dangling=true" -q --no-trunc)

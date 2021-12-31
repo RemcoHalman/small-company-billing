@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  backend:
+    image: billing-company:0.0.1
+    build: ./
+    container_name: Billing-Company
+    command: python manage.py runserver 0.0.0.0:8000
+    restart: always
+    ports:
+      - "3300:8000"
