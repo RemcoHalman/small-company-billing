@@ -59,6 +59,7 @@ class Tax(models.Model):
         percentage = value / 100
         return percentage
 
+
 class DueDate(models.Model):
     time_due_date = models.PositiveIntegerField(
         unique=False,

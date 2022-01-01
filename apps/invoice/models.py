@@ -1,6 +1,7 @@
 from django.db import models
 import datetime
 
+
 class Invoice(models.Model):
     invoice_title = models.CharField(max_length=200)
     invoice_number = models.IntegerField(default=0)

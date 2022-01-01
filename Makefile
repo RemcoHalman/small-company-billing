@@ -52,7 +52,7 @@ dummy_db:
 rebuild: clean_up dummy_db
 
 linter:
-	@flake8 . --exit-zero --exclude .git,venv > linter-todo.md
+	@flake8 . --exit-zero --ignore E501,F401 --exclude .git,venv > linter-todo.md
 
 # ============================================ *
 # 						Docker specific tasks						 *

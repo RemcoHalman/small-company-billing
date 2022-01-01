@@ -1,17 +1,19 @@
 from django.db import models
 
 customerChoice = (
-    ( 'Individual', 'Individual'),
-    ( 'Business', 'Business'),
+    ('Individual', 'Individual'),
+    ('Business', 'Business'),
 )
 
-## Customer and coresponding models
+
+# Customer and coresponding models
 class Customer(models.Model):
     name = models.CharField(max_length=100)
     customer_type = models.CharField(max_length=100, choices=customerChoice)
 
     def __str__(self):
         return self.name
+
 
 class CustomerDetails(models.Model):
     customer = models.OneToOneField(
@@ -36,7 +38,7 @@ class CustomerDetails(models.Model):
         null=True,
         help_text="Chamber of Commerce / KVK nummer",
     )
-    
+
     def __str__(self):
         return f"{self.customer}"
 

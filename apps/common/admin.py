@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import  Tax, DueDate, Priority, InvoiceState
+from .models import Tax, DueDate, Priority, InvoiceState
+
 
 @admin.register(Tax)
 class TaxAdmin(admin.ModelAdmin):
@@ -10,11 +11,12 @@ class TaxAdmin(admin.ModelAdmin):
 class DueDateAdmin(admin.ModelAdmin):
     list_display = ('time_due_date',)
 
+
 @admin.register(Priority)
 class PriorityAdmin(admin.ModelAdmin):
     pass
 
+
 @admin.register(InvoiceState)
 class InvoiceStateAdmin(admin.ModelAdmin):
     pass
-

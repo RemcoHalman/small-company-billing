@@ -13,7 +13,8 @@ SECRET_KEY = 'django-insecure-s-%rd3u8&-*ivu%oxb(pt_@a!e)7=)xy8(jvjleju(ht%z#5sf
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = ['*', ]
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -31,10 +32,10 @@ INSTALLED_APPS = [
 ]
 
 
-ADMIN_SITE_HEADER = "Billing Administration" # default: "Django Administration"
-ADMIN_SITE_TITLE = "Billing Administration" # default: "Django site admin"
-ADMIN_INDEX_TITLE = "Features area" # default: "Site administration"
-ADMIN_SITE_URL = "/" # default: "/"
+ADMIN_SITE_HEADER = "Billing Administration"  # default: "Django Administration"
+ADMIN_SITE_TITLE = "Billing Administration"  # default: "Django site admin"
+ADMIN_INDEX_TITLE = "Features area"  # default: "Site administration"
+ADMIN_SITE_URL = "/"  # default: "/"
 
 if DEBUG:
     INSTALLED_APPS += [
@@ -89,10 +90,10 @@ DATABASES = {
 AUTH_USER_MODEL = 'account.CustomUser'
 
 AUTH_PASSWORD_VALIDATORS = [
-    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',},
-    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',},
-    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',},
-    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',},
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', },
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator', },
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator', },
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator', },
 ]
 
 

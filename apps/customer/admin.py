@@ -14,5 +14,5 @@ class AddressAdmin(admin.StackedInline):
 class CustomerAdmin(admin.ModelAdmin):
     inlines = [
         AddressAdmin,
-        CustomerDetailsAdmin, 
+        CustomerDetailsAdmin,
     ]
