@@ -3,14 +3,26 @@
     "model": "invoice.invoice",
     "pk": 1,
     "fields": {
-      "invoice_title": "Test",
-      "invoice_number": 20210001,
+      "invoice_title": "Test invoice",
+      "invoice_number": 20220001,
       "invoice_state": 1,
       "to_address": 1,
       "created_by": 1,
-      "created_on": "2021-12-28T19:37:55.378Z",
-      "due_date": 3,
-      "tax_value": 2
+      "created_on": "2022-01-02T15:31:13.163Z",
+      "due_date": 3
+    }
+  },
+  {
+    "model": "invoice.invoice",
+    "pk": 2,
+    "fields": {
+      "invoice_title": "Test invoice 2",
+      "invoice_number": 20220002,
+      "invoice_state": 3,
+      "to_address": 1,
+      "created_by": 1,
+      "created_on": "2022-01-02T15:31:23.474Z",
+      "due_date": 3
     }
   }
 ]

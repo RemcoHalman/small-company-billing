@@ -4,7 +4,7 @@ from .models import Tax, DueDate, Priority, InvoiceState
 
 @admin.register(Tax)
 class TaxAdmin(admin.ModelAdmin):
-    list_display = ('value', 'tax_value')
+    list_display = ('id', 'value', 'tax_value')
 
 
 @admin.register(DueDate)

@@ -1,0 +1,44 @@
+[
+  {
+    "model": "service.service",
+    "pk": 1,
+    "fields": {
+      "name": "Test Service 1",
+      "description": "",
+      "price_per_hour": "42.50",
+      "hours": "01:00:00",
+      "tax_value": 3
+    }
+  },
+  {
+    "model": "service.service",
+    "pk": 2,
+    "fields": {
+      "name": "Test Service 2",
+      "description": "Test Description",
+      "price_per_hour": "42.50",
+      "hours": "01:00:00",
+      "tax_value": 3
+    }
+  },
+  {
+    "model": "service.product",
+    "pk": 1,
+    "fields": {
+      "name": "Test Product 1",
+      "description": "",
+      "price": "10.00",
+      "tax_value": 3
+    }
+  },
+  {
+    "model": "service.product",
+    "pk": 2,
+    "fields": {
+      "name": "Test Product 2",
+      "description": "with description",
+      "price": "10.00",
+      "tax_value": 3
+    }
+  }
+]

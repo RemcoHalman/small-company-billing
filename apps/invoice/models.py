@@ -1,5 +1,9 @@
 from django.db import models
+from django.forms.models import ModelForm
 import datetime
+from apps.account.models import CustomUser
+from apps.service.models import Service, Product
+from django.forms.widgets import CheckboxSelectMultiple
 
 
 class Invoice(models.Model):
@@ -8,7 +12,8 @@ class Invoice(models.Model):
     invoice_state = models.ForeignKey(
         'common.InvoiceState',
         on_delete=models.PROTECT,
-        related_name="invoice_state"
+        related_name="invoice_state",
+        default=1
     )
     to_address = models.ForeignKey(
         'customer.Address',
@@ -27,12 +32,17 @@ class Invoice(models.Model):
         blank=True,
         null=True,
         on_delete=models.PROTECT,
+        default=3
     )
-    tax_value = models.ForeignKey(
-        'common.Tax',
-        on_delete=models.PROTECT,
-        related_name="invoice_tax",
-        default=1
+    product = models.ManyToManyField(
+        'service.Product',
+        related_name='product',
+        blank=True,
+    )
+    service = models.ManyToManyField(
+        'service.Service',
+        related_name='service',
+        blank=True,
     )
 
     def __str__(self):
@@ -56,3 +66,16 @@ class Invoice(models.Model):
             return number
         year = datetime.datetime.today().year
         return f"{year}{1:04d}"
+
+# class CheckboxForm(ModelForm):
+#     class Meta:
+#         model = Invoice
+#         fields = ("service", "product", )
+
+#     def __init__(self, * args, ** kwargs):
+#         super(CheckboxForm, self).__init__( * args, ** kwargs)
+
+#         self.fields["service"].widget = CheckboxSelectMultiple()
+#         self.fields["service"].queryset = Service.objects.all()
+#         self.fields["product"].widget = CheckboxSelectMultiple()
+#         self.fields["product"].queryset = Product.objects.all()
