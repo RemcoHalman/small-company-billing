@@ -1,0 +1,8 @@
+{% extends 'admin/change_form.html' %}
+
+{% block submit_buttons_bottom %}
+{{ block.super }}
+<form action="">
+  <input type="submit" target="_blank" value="Preview invoice" name="_preview">
+</form>
+{% endblock %}
