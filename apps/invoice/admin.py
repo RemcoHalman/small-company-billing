@@ -20,17 +20,17 @@ class InvoiceAdmin(admin.ModelAdmin):
     )
     formfield_overrides = {
         models.ManyToManyField: {
-            'widget': forms.CheckboxSelectMultiple
+            'widget': forms.CheckboxSelectMultiple,
         },
     }
     change_form_template = "invoice/preview_invoice.html"
-    
+
     def save_model(self, request, obj, form, change):
         obj.created_by = request.user
         print(obj.created_by)
         super(InvoiceAdmin, self).save_model(request, obj, form, change)
 
-    def response_change(self, request ,obj):
+    def response_change(self, request, obj):
         if "_preview" in request.POST:
             matching_names_except_this = self.get_queryset(request).filter(invoice_title=obj.invoice_title).exclude(pk=obj.id)
             matching_names_except_this.delete()
