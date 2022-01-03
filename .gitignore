@@ -139,3 +139,5 @@ GitHub.sublime-settings
 # Other
 .DS_store
 linter-todo.md
+.vscode
+testmollie.py
